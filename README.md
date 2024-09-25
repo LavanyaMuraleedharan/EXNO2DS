@@ -100,6 +100,39 @@ sns.scatterplot(x=df["Age"],y=df["Fare"])
 ```
 ![image](https://github.com/user-attachments/assets/182cb7f1-566d-48c4-945c-d626f559ed04)
 
+```
+sns.jointplot(x="Age",y="Fare",data=df)
+```
+![image](https://github.com/user-attachments/assets/3bc0aab3-8c6e-473e-aad3-a493c5d22ea4)
+
+```
+fig, ax1 = plt.subplots(figsize=(8,5))
+plt = sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Gender',data=df)
+```
+![image](https://github.com/user-attachments/assets/81b67e55-de58-4328-811e-da555cf19fda)
+
+```
+sns.catplot(data=df,col="Survived",x="Gender",hue="Pclass",kind="count")
+```
+![image](https://github.com/user-attachments/assets/92fd09fc-2481-4388-9c69-a91c214ed2f8)
+
+```
+sns.catplot(data=df,col="Survived",x="Gender",hue="Pclass",kind="count")
+```
+![image](https://github.com/user-attachments/assets/096d8520-d809-4e85-8d2e-7d821b79762b)
+
+```
+numeric_df = df.select_dtypes(include=[np.number])
+corr = numeric_df.corr()
+sns.heatmap(corr, annot=True)
+```
+![image](https://github.com/user-attachments/assets/67d455f8-e11b-49b0-a94a-d4e887870f3a)
+
+```
+sns.pairplot(df)
+```
+![image](https://github.com/user-attachments/assets/980f7eda-f022-4e82-880b-63f0c2fb77d9)
+
 
 # RESULT
-        <<INCLUDE YOUR RESULT HERE>>
+       perform Exploratory Data Analysis on the given data set is done.
